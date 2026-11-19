@@ -1,22 +1,32 @@
-# Implementation Plan
+# Implementation Plan — Prism Mail
 
-> Task breakdown stub. Child repos replace this with the first milestone. Active work lives in `BUILD_PLAN.md`.
-> Status: 🔲 open · ✅ done · ❌ blocked.
+> Active work lives in `BUILD_PLAN.md`. This file is the milestone map.
 
-## Milestone — Bootstrap standards (M36)
+## Milestone map
 
-| Task | Owner | Tests / fallback |
-|------|-------|------------------|
-| ✅ Manifest + pre/post hooks | AGENT | `tests/test_bootstrap_engine.py` |
-| ✅ AGENTS.md spec + adapters | AGENT | `check-bootstrap-engine.sh` + file presence |
-| ✅ SDD stubs (`docs/spec.md`, this file) | AGENT | `validate-bootstrap.sh` REQUIRED list |
-| ✅ Init dry-run asserts new artifacts | AGENT | `simulate-template-upgrade.sh` |
+| Milestone | Sprint | Outcome |
+|-----------|--------|---------|
+| M0 Foundation | Sprint 0 | Init, brand, ADRs, schema, three-pane shell, gates |
+| M1 Web hub core | Sprint 1 | Gmail, list/read, compose stub, privacy engine, local settings |
+| M2 Universal sync | Sprint 2 | Encrypted settings/rules sync + near-real-time updates |
+| M3 Desktop | Sprint 3 | Tauri Win/Mac/Linux online client + Proton Bridge module |
+| M4 Mobile | Sprint 4 | Android + iOS + push |
 
-## Next feature
+## Sprint 0 tasks
 
-1. Copy `docs/features/_template.md` → `docs/features/{name}.md`
-2. Lock the public API (Sequential)
-3. Add unit tests before or with the implementation
-4. Run `python3 scripts/agent-run.py watch-agent-gates --once --autofix`
+| Task | Owner | Notes |
+|------|-------|-------|
+| Repo from template + init web full | AGENT | Done in Sprint 0 execution |
+| Brand + setup-github-repo | AGENT / HUMAN | HUMAN: Pages reviewers, Actions approvals |
+| ADRs 0001, 0011-0015 | AGENT | Accepted drafts |
+| Threat model + privacy | AGENT | Prism-specific drafts |
+| Settings/whitelist schema | AGENT | docs + TS types |
+| Three-pane web shell | AGENT | examples/web/src/mail |
+| Local + GitHub gates | AUTO / HUMAN | CI wait after push |
 
-If automated tests are not feasible, write the justification and fallback command in the feature spec before marking the BUILD_PLAN row ✅.
+## Next feature protocol
+
+1. Copy `docs/features/_template.md` to `docs/features/{name}.md`
+2. Lock public API (Sequential)
+3. Unit tests before or with implementation
+4. `python3 scripts/agent-run.py watch-agent-gates --once --autofix --scope auto`

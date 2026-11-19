@@ -10,11 +10,11 @@ test("preview sends CSP and referrer policy", async ({ page }) => {
   expect(headers["permissions-policy"] ?? "").toContain("camera=()");
 });
 
-test("renders golden path heading", async ({ page }) => {
+test("renders prism mail shell", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
-  await expect(page.getByText("Hello, FOSS!")).toBeVisible();
-  await expect(page.getByTestId("status")).toContainText("Golden Path PWA");
+  await expect(page.getByRole("heading", { name: "Prism Mail" })).toBeVisible();
+  await expect(page.getByTestId("mail-list-empty")).toBeVisible();
+  await expect(page.getByTestId("status")).toContainText("Prism Mail");
 });
 
 test("rtl dir places the title after header actions", async ({ page }) => {
@@ -23,7 +23,7 @@ test("rtl dir places the title after header actions", async ({ page }) => {
     document.documentElement.setAttribute("dir", "rtl");
   });
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Prism Mail" })).toBeVisible();
   const title = await page.locator(".gp-title").boundingBox();
   const actions = await page.locator(".gp-header-actions").boundingBox();
   expect(title).toBeTruthy();
@@ -280,12 +280,12 @@ test("serves cached shell offline via service worker", async ({ page, context })
   });
   await page.reload();
   await page.waitForLoadState("networkidle");
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
-  await expect(page.getByText("Hello, FOSS!")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Prism Mail" })).toBeVisible();
+  await expect(page.getByTestId("mail-list-empty")).toBeVisible();
 
   await context.setOffline(true);
   await page.reload();
-  await expect(page.getByRole("heading", { name: "Golden Path PWA" })).toBeVisible();
-  await expect(page.getByText("Hello, FOSS!")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Prism Mail" })).toBeVisible();
+  await expect(page.getByTestId("mail-list-empty")).toBeVisible();
   await expect(page.getByTestId("status")).toBeVisible();
 });

@@ -32,9 +32,28 @@
 - ✅ `SECURITY.md` and private vulnerability reporting enabled
 
 ## Persistent Context
+### Persistent Context (2026-11-19)
+- Product: Prism Mail; path C:/Users/edwar/prism-mail; repo edwardlthompson/prism-mail
+- Stack: web (profile full); Android/python/node examples pruned
+- Sprint 0: ADRs 0001 + 0011-0015, three-pane mail shell, brand icon owned
+- Next: Sprint 1 Gmail + privacy engine after HUMAN Pages/Cursor-mode confirm
+
 
 <!-- product-brief-sync:begin -->
-_Template maintainer: no product AGENT.md. Children write AGENT.md before init._
+> Read `AGENT.md` before any sprint row.
+
+**One-liner:** Privacy-first multi-provider email: web hub, online desktop (Win/Mac/Linux), mobile, universal synced rules.
+**Do not drift:** email, privacy, pwa, desktop, sync, whitelist, proton bridge, gmail, imap
+
+**Rules:**
+- Prefer Plan Mode for architecture; Agent Mode only after plan/ADR approval.
+- Keep UI minimal and modern; do not copy proprietary code or FairEmail assets.
+- Desktop helper/connector remains optional; desktop is online-only for mail bodies.
+- MIT; no proprietary SDKs on the FOSS path; no telemetry by default.
+- AGENTS.md is sacred; sync adapters after rule changes.
+- File budgets: static ≤300, logic ≤150, composition roots ≤10 lines/feature.
+
+**First milestone:** Bootstrap web stack (--profile full), ADRs 0001–0006, threat model, privacy stub, settings/whitelist schema, three-pane web shell; CI + template gates green.
 <!-- product-brief-sync:end -->
 
 ### Project Purpose

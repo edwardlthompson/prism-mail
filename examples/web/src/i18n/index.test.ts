@@ -7,14 +7,14 @@ describe("i18n", () => {
   });
 
   it("returns English strings by default", () => {
-    expect(t("app.greeting")).toBe("Hello, FOSS!");
+    expect(t("app.greeting")).toBe("Privacy-first mail");
     expect(getLocale()).toBe("en");
   });
 
   it("switches to the Spanish catalog", () => {
     setLocale("es");
     expect(getLocale()).toBe("es");
-    expect(t("app.greeting")).toBe("¡Hola, FOSS!");
+    expect(t("app.greeting")).toBe("Correo con privacidad primero");
     expect(t("settings.open")).toBe("Ajustes");
     expect(t("settings.search")).toBe("Buscar ajustes");
     expect(document.documentElement.lang).toBe("es");
@@ -24,7 +24,7 @@ describe("i18n", () => {
   it("ignores unsupported locale and keeps English", () => {
     setLocale("zz");
     expect(getLocale()).toBe("en");
-    expect(t("app.greeting")).toBe("Hello, FOSS!");
+    expect(t("app.greeting")).toBe("Privacy-first mail");
   });
 
   it("falls back to key when missing", () => {

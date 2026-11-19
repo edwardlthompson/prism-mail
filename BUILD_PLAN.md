@@ -1,24 +1,18 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 0 · HUMAN 0 · ADB 0 · **0 open**
+**Remaining:** AGENT 12 · LOCAL 12 · CLOUD 0 · AUTO 1 · HUMAN 7 · ADB 2 · **22 open**
 <!-- /remaining-tally -->
 
-### Product (do not drift)
-
-> Auto-managed from `AGENT.md` after init. Do not hand-edit inside markers. Read `AGENT.md` before any sprint row.
-
-<!-- product-brief-sync:begin -->
-_Template maintainer: no product AGENT.md. Children write AGENT.md before init._
-<!-- product-brief-sync:end -->
-
-Live board for **this template repo**. Finished work: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md). Child products use [`BUILD_PLAN_TEMPLATE.md`](BUILD_PLAN_TEMPLATE.md) (copied onto their `BUILD_PLAN.md` at init).
+Live board for a product repo. Finished work: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
 
 **Who:** `AGENT` code · `HUMAN` person · `ADB` device · `AUTO` CI/scripts
-**Venue (AGENT only):** `[LOCAL]` This Computer · `[CLOUD]` Cursor Cloud — see [`docs/adr/0008-agent-venue.md`](docs/adr/0008-agent-venue.md)
+**Venue (AGENT only):** `[LOCAL]` This Computer · `[CLOUD]` Cursor Cloud — [`docs/adr/0008-agent-venue.md`](docs/adr/0008-agent-venue.md)
 **State:** 🔲 open · ✅ done · ❌ blocked — reason
 
 Format: `🔲 [AGENT][LOCAL] Short task — scope: path/prefix` (or `[CLOUD]`). Sequential `[AGENT]` first. Parallel scopes: [`docs/PARALLEL_AGENT_SCOPES.md`](docs/PARALLEL_AGENT_SCOPES.md). `/build` on This Computer picks LOCAL only; Cloud picks CLOUD only. HUMAN/ADB after automation → `HUMAN_BACKLOG.md`.
+
+This file is the **child model**. After `init-project`, it becomes your `BUILD_PLAN.md`. On the bootstrap template, the live maintainer board is [`BUILD_PLAN.md`](BUILD_PLAN.md).
 
 ## Smoke gate (hard stop)
 
@@ -35,64 +29,95 @@ That command re-smokes **every** ✅ row: no errors or crashes, plus startup tim
 
 ---
 
-## Template Maintainer
+## Product
 
-**Now:** AGENT board empty. After Cloud work, `/resume`. Child model: [`BUILD_PLAN_TEMPLATE.md`](BUILD_PLAN_TEMPLATE.md).
+Copy this shape when you add sprints: `### Sprint N — title`, then numbered rows. Keep it this short.
 
-> **M66** shape ecosystem + commercial GP + coverage + deep-upgrade — archived in COMPLETED_TASKS.md @ `08ac840`.
-> **M65** parent brand + child `/brand`/splash playbook — archived in COMPLETED_TASKS.md @ `08ac840`.
-> **v1.8.0** release archived in COMPLETED_TASKS.md @ `1cafc11`.
-> **M64** archived in COMPLETED_TASKS.md @ `86bc12c`.
-> **M63** archived in COMPLETED_TASKS.md @ `9b7870b`.
-> **v1.6.0** release archived in COMPLETED_TASKS.md @ `d4cb35b`.
-> **M62** archived in COMPLETED_TASKS.md @ `81d165b`.
-> **v1.5.0** release archived in COMPLETED_TASKS.md @ `9808229`.
-> **v1.4.0** release archived in COMPLETED_TASKS.md @ `f105c3b`.
-> **v1.3.0** release archived in COMPLETED_TASKS.md @ `7ca6dbf`.
-> **M61** archived in COMPLETED_TASKS.md @ `ca0edfb`.
-> **M60** archived in COMPLETED_TASKS.md @ `ca0edfb`.
-> **M59** archived in COMPLETED_TASKS.md @ `ca0edfb`.
-> **M58** archived in COMPLETED_TASKS.md @ `ca0edfb`.
-> **M57** archived in COMPLETED_TASKS.md @ `e65513d`. Nav smoke ADB archived 2026-09-10.
-> **Waiting HUMAN/ADB auto** archived in COMPLETED_TASKS.md @ `ca0edfb`.
+### Product (do not drift)
 
-### UX & UI inventory
+> Auto-managed from `AGENT.md` after init. Do not hand-edit inside markers. Read `AGENT.md` before any sprint row.
 
-Complete list from construction gaps and `/ux-review`. Status is only planned / in_progress / done. `/build` does not execute these until `/ux-apply UX-NNN` (or a Sequential row).
+<!-- product-brief-sync:begin -->
+> Read `AGENT.md` before any sprint row.
 
-<!-- ux-inventory:begin -->
-_No UX inventory items._
-<!-- ux-inventory:end -->
+**One-liner:** Privacy-first multi-provider email: web hub, online desktop (Win/Mac/Linux), mobile, universal synced rules.
+**Do not drift:** email, privacy, pwa, desktop, sync, whitelist, proton bridge, gmail, imap
 
-### Local agent (This Computer)
+**Rules:**
+- Prefer Plan Mode for architecture; Agent Mode only after plan/ADR approval.
+- Keep UI minimal and modern; do not copy proprietary code or FairEmail assets.
+- Desktop helper/connector remains optional; desktop is online-only for mail bodies.
+- MIT; no proprietary SDKs on the FOSS path; no telemetry by default.
+- AGENTS.md is sacred; sync adapters after rule changes.
+- File budgets: static ≤300, logic ≤150, composition roots ≤10 lines/feature.
 
-Standing queue for This Computer. Rows: `🔲 [AGENT][LOCAL] … — scope: path`. `/build` and `/feature` claim these only. Isolation: [`docs/adr/0008-agent-venue.md`](docs/adr/0008-agent-venue.md).
+**First milestone:** Bootstrap web stack (--profile full), ADRs 0001–0006, threat model, privacy stub, settings/whitelist schema, three-pane web shell; CI + template gates green.
+<!-- product-brief-sync:end -->
 
-<!-- local-agent-lane:begin -->
-- 🔲 [AGENT][LOCAL] Pin and allowlist MCP server packages in templates — scope: .cursor/ (news P1, 2026-11-13) https://github.com/advisories/GHSA-72xc-q3v8-7grp
-- 🔲 [AGENT][LOCAL] Document Dependabot inactive-repo pause in the template — scope: docs/ (news P2, 2026-11-13) https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories
-- 🔲 [AGENT][LOCAL] Audit template MCP examples for filesystem/git/fetch servers — scope: docs/MCP_RECIPES.md (news P2, 2026-11-13) https://github.com/modelcontextprotocol/servers/releases/tag/v2.4.0
-- 🔲 [AGENT][LOCAL] Audit the repo for wfx-loot IOCs — scope: .github/ (news P1, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
-- 🔲 [AGENT][LOCAL] Default template CI installs to --ignore-scripts — scope: .github/workflows/ (news P2, 2026-11-14) https://blog.gitguardian.com/wfx-loot-a-ci-secret-stealer-pushed-with-stolen-github-credentials/
-- 🔲 [AGENT][LOCAL] Bump pinned Node to 24.22.3 or 26.13.1 — scope: examples/node/ (news P2, 2026-11-14) https://nodejs.org/en/blog/vulnerability/november-2026-security-releases
-- 🔲 [AGENT][LOCAL] Add a "never paste secrets into agent chats or support" rule to the AGENTS.md contract — scope: AGENTS.md (news P2, 2026-11-15) https://cursor.com/blog/security-incident-update
-- 🔲 [AGENT][LOCAL] Fail validate-workflow-actions on `on: pull_request_target` — scope: scripts/validate-workflow-actions.sh (news P2, 2026-11-16) https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2/
-- 🔲 [AGENT][LOCAL] Confirm agent-framework 1.26.1/1.26.2 is absent and add a denylist plus .pth hook check — scope: docs/, examples/python/ (news P2, 2026-11-18) https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi
-- 🔲 [AGENT][LOCAL] Upgrade template MCP git/filesystem/everything servers to the v2.5.0 patches — scope: docs/MCP_RECIPES.md (news P2, 2026-11-18) https://github.com/modelcontextprotocol/servers/releases/tag/v2.5.0
-- 🔲 [AGENT][LOCAL] Upgrade MCP Inspector to 2.16.0 or 1.0.6 if the template documents it — scope: docs/ (news P2, 2026-11-18) https://github.com/modelcontextprotocol/inspector/releases/tag/2.16.0
-<!-- local-agent-lane:end -->
+### Sprint 0 — Foundation
 
-### Cloud agent (Cursor Cloud)
+<!-- parallel_exception: bootstrap sequence is ordered until init completes -->
 
-Standing queue for Cursor Cloud Agents. Rows: `🔲 [AGENT][CLOUD] … — scope: path`. Cloud claims these only (`cursor/*` branches). Never edit Local lane or `[LOCAL]` rows.
+1. ✅ [AGENT][LOCAL] Copy `AGENT.md.example` → `AGENT.md` with product brief — scope: AGENT.md
+2. ✅ [AGENT][LOCAL] Run `scripts/init-project.ps1` web + profile full + MIT — scope: scripts/
+3. ✅ [AGENT][LOCAL] Brand `product.json` mode product; sync tokens + README — scope: branding/
+4. ✅ [AGENT][LOCAL] Run `scripts/setup-github-repo.ps1` — scope: scripts/
+5. ✅ [AGENT][LOCAL] Write ADRs 0001 + 0011–0015, threat model, privacy, schema — scope: docs/
+6. ✅ [AGENT][LOCAL] Write `docs/spec.md`, `docs/plan.md`, expand this board — scope: docs/
+7. ✅ [AGENT][LOCAL] Scaffold three-pane mail shell + local settings/whitelist stub — scope: examples/web/src/mail/
+8. 🔲 [AUTO] Sprint 0 sign-off on `main`: `validate-bootstrap --quick` · `feature-gate --stack web` · `check-github-ci --wait 300` · `check-license-compliance`
+9. ✅ [HUMAN] Create GitHub repo from template (agent used `gh repo create --template`)
+10. ✅ [HUMAN] FOSS distribution tier
+11. 🔲 [HUMAN] Confirm Pages source = GitHub Actions; review environment reviewers
+12. 🔲 [HUMAN] Pick Cursor mode (`docs/CURSOR_MODES.md`)
+13. ✅ [AGENT][LOCAL] Replace inherited brand icon with Prism mark (`docs/BRAND_ICON.md`)
+14. 🔲 [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md` (`/coach`)
 
-<!-- cloud-agent-lane:begin -->
-_No cloud agent items._
-<!-- cloud-agent-lane:end -->
+### Sprint 1 — Web hub core
+
+<!-- parallel: privacy engine vs Gmail adapter after shell API locked -->
+
+1. 🔲 [AGENT][LOCAL] Lock Settings chrome + About + nav for Prism Mail — scope: examples/web/
+2. 🔲 [AGENT][LOCAL] Gmail OAuth account connect + message list — scope: examples/web/src/mail/
+3. 🔲 [AGENT][LOCAL] Reading pane + privacy engine (image block, link confirm) — scope: examples/web/src/mail/
+4. 🔲 [AGENT][LOCAL] Basic compose stub + local settings persistence — scope: examples/web/src/mail/
+5. 🔲 [HUMAN] Approve Sprint 1 + fill `app-update.json` / `donations.json` if needed
+
+**Parallel (after row 1 API lock):**
+
+| Lane | Owner | Scope |
+|------|-------|-------|
+| A | `[AGENT][LOCAL]` | `examples/web/src/mail/providers/` |
+| B | `[AGENT][LOCAL]` | `examples/web/src/mail/privacy/` |
+
+### Sprint 2 — Universal rules and sync
+
+1. 🔲 [AGENT][LOCAL] Feature spec `docs/features/encrypted-settings-sync.md` — scope: docs/features/
+2. 🔲 [AGENT][LOCAL] Encrypted sync layer for settings + whitelist rules — scope: examples/web/src/mail/
+3. 🔲 [AGENT][LOCAL] WebSocket (or equivalent) near-real-time rule updates — scope: examples/web/src/mail/
+4. 🔲 [HUMAN] Approve sync service hosting model (self-host vs local-only)
+
+### Sprint 3 — Desktop online client + Proton connector
+
+1. 🔲 [AGENT][LOCAL] Feature spec for Tauri desktop online client — scope: docs/features/
+2. 🔲 [AGENT][LOCAL] Scaffold Tauri 2 app (Win/Mac/Linux) online hub client — scope: apps/desktop/
+3. 🔲 [AGENT][LOCAL] Optional Proton Bridge connector module + delta push — scope: apps/desktop/
+4. 🔲 [HUMAN] Code-sign / notarize strategy for desktop installers
+
+### Sprint 4 — Mobile clients
+
+1. 🔲 [AGENT][LOCAL] Android Kotlin/Compose hub client + F-Droid-friendly push path — scope: apps/android/
+2. 🔲 [AGENT][LOCAL] iOS Swift/SwiftUI hub client + APNs — scope: apps/ios/
+3. 🔲 [ADB] Device smoke for push + rule sync
+4. 🔲 [HUMAN] App Store / Play listing privacy disclosures
+
+### Waiting on a person
+
+1. 🔲 [ADB] Optional: Android SDK licenses + first AVD (`/emulator`)
 
 ### Open PRs (synced)
 
-> Auto-managed. Do not hand-edit rows inside the markers. Run `python3 scripts/agent-run.py sync-open-prs-build-plan -- --apply` (or `/resume` / `/dependabot`).
+> Auto-managed on product repos too. Do not hand-edit rows inside the markers.
 
 <!-- open-prs-sync:begin -->
 _No open Dependabot or Release Please PRs._
@@ -106,21 +131,35 @@ _No open Dependabot or Release Please PRs._
 _No template gaps; .template-version matches upstream (or template maintainer N/A)._
 <!-- template-gaps-sync:end -->
 
-### Waiting on a person
+### UX & UI inventory
 
-_None._ Lightroom stub smoke is `feature-gate --stack lightroom` (Lua/SDK), not Plug-in Manager. Raster icons are `blender-icons` QA, not a HUMAN export.
+Complete list from construction gaps and `/ux-review`. Status is only planned / in_progress / done. `/build` does not execute these until `/ux-apply UX-NNN` (or a Sequential row). Follow [`docs/ux-ui-guidelines.md`](docs/ux-ui-guidelines.md) when shipping UI.
 
-Done on this board: **M66** shape/commercial/coverage/deep-upgrade · **M65** brand/splash · **v1.8.0** · **M64** cost/brevity · **M63** Local/Cloud venues · **v1.6.0** · **M62** UX/UI construction law · **v1.5.0** · **v1.4.0** · **v1.3.0** · **M61**–**M47** (see archive). Archive: `COMPLETED_TASKS.md`.
+<!-- ux-inventory:begin -->
+_No UX inventory items._
+<!-- ux-inventory:end -->
 
-- 🔲 [HUMAN] Update Git to 2.56.1+ on dev hosts and have the template update checker warn below the patched version (news P2, 2026-11-16) https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/
+### Local agent (This Computer)
+
+Standing queue for This Computer. Rows: `🔲 [AGENT][LOCAL] … — scope: path`. `/build` claims these only. See [`docs/adr/0008-agent-venue.md`](docs/adr/0008-agent-venue.md).
+
+<!-- local-agent-lane:begin -->
+_No local agent items._
+<!-- local-agent-lane:end -->
+
+### Cloud agent (Cursor Cloud)
+
+Standing queue for Cursor Cloud. Rows: `🔲 [AGENT][CLOUD] … — scope: path`. Cloud claims these only (`cursor/*`). Never edit Local lane or `[LOCAL]` rows.
+
+<!-- cloud-agent-lane:begin -->
+_No cloud agent items._
+<!-- cloud-agent-lane:end -->
 
 ---
 
 ## Ongoing Maintenance
 
-Not a checklist. GitHub Monday 07:00 UTC (`.github/workflows/weekly-health-check.yml`) already runs CI wait, security triage, upgrade-sim (template) or parent template-gap BUILD_PLAN sync (child), radar, `update-deps` dry-run, Dependabot leftover list, open-PR BUILD_PLAN sync, and latest-release SBOM. `/ship` owns pre-release and the release tag.
-
-Open Dependabot / Release Please PRs are mirrored into **Open PRs (synced)** above; child catch-up rows land in **Template gaps (synced)** — allowed board automation, not standing chore rows. After Cloud Agents, use `/resume` on This Computer.
+Not a checklist. GitHub Monday cron (`.github/workflows/weekly-health-check.yml`) already runs CI wait, security triage, parent template-gap BUILD_PLAN sync (this child board), radar, `update-deps` dry-run, Dependabot leftover list, open-PR BUILD_PLAN sync, and latest-release SBOM. Upgrade-sim stays on the template maintainer repo. `/ship` owns pre-release and the release tag.
 
 If Monday cron is red: Cursor Automation `weekly-maintain`, then Grok Bot 4–5. Do not put those chores back on this board. [`docs/GROK_BOTS.md`](docs/GROK_BOTS.md) · [`docs/CURSOR_AUTOMATIONS.commercial.md`](docs/CURSOR_AUTOMATIONS.commercial.md)
 
@@ -128,4 +167,4 @@ If Monday cron is red: Cursor Automation `weekly-maintain`, then Grok Bot 4–5.
 
 ## Archive
 
-Older sprints and releases: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
+Older sprints: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).

@@ -17,6 +17,13 @@
 
 ## Entries
 
+### 2026-11-19 — Prism Mail Sprint 0 architecture lock
+- **Status:** Accepted
+- **Context:** Product brief + user expansion: full online-only desktop clients (Win/Mac/Linux) in addition to web hub and mobile; Proton Bridge as optional desktop module.
+- **Decision:** Hexagonal multi-client topology (ADR-0001). Universal versioned settings/rules (ADR-0011). FairEmail-inspired privacy engine (ADR-0012). Proton Bridge connector model (ADR-0013). Logical clocks + tombstones (ADR-0014). Desktop online-only policy, Tauri 2 later (ADR-0015). Init with web stack profile full (not core).
+- **Alternatives considered:** Profile core (rejected — strips docs/examples); desktop Proton-only helper forever (superseded by full online desktop); offline desktop mailbox cache (rejected by user).
+- **Consequences:** Sprint 0 docs/ADRs/schema/shell; desktop/mobile deferred to Sprints 3–4.
+
 ### 2026-11-05 — Child hygiene: `.agent/` memory + golden-path prune
 - **Status:** Accepted
 - **Context:** After pull from main, children must not keep living memory at repo root, and a decided primary stack must drop unused examples/modules (including optional stacks).

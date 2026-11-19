@@ -1,7 +1,7 @@
 {
-  "name": "Golden Path PWA",
-  "short_name": "GoldenPath",
-  "description": "FOSS PWA stub for agent-project-bootstrap",
+  "name": "Prism Mail",
+  "short_name": "PrismMail",
+  "description": "Privacy-first multi-provider email client",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1a2e",
