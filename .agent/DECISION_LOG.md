@@ -628,3 +628,9 @@ _Seed template ADR: `docs/adr/0000-template-baseline.md`. Child repos use `docs/
 ## Autonomous /build approval (2026-11-19T06:19:53+00:00)
 
 - Store privacy disclosure pack written (nutrition + STORE_PRIVACY_DISCLOSURES)
+
+## /push Prism Mail Sprint 0 sign-off (2026-11-19)
+
+- What: Archive Sprint 0 after CI green; slim BUILD_PLAN; empty HUMAN_BACKLOG; push `01e6198`.
+- Validated: `check-changelog-unreleased --require-empty`, `validate-bootstrap --quick`, `feature-gate --stack web`, license + README health.
+- Deferred: Release Please PR create (repo permissions); Windows path fix for `automate_sprint0_push_ci` (`script.as_posix()`).

@@ -168,3 +168,7 @@ Golden Path Settings/About/Feedback are a route stack, not three booleans. Web H
 ### Retrospective — 2026-11-09 (Argus Parts 1–5)
 
 - Argus foundation: `brand.json` + `app-icon-1024.png`, contract v2, five hygiene gates; rules SoT + `rules.manifest.json`; fleet/briefs planner; YOLO off by default; remote console `enabled: false`. Template does not ship `yolo.on`.
+
+### Retrospective — 2026-11-19 (Prism Mail Sprint 0–4 /push)
+
+- Product board empty (0 open). Sprint 0–4 archived @ `a03975c` / cleanup `01e6198`. HUMAN/ADB automation via `human_task_prism*`; ADR-0016 local-only sync; CI web-only (CodeQL JS, stack-presence). Release Please may need repo create/PR permissions if no RP PR appears.
