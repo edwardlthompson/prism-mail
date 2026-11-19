@@ -65,7 +65,7 @@ Copy this shape when you add sprints: `### Sprint N — title`, then numbered ro
 5. ✅ [AGENT][LOCAL] Write ADRs 0001 + 0011–0015, threat model, privacy, schema — scope: docs/
 6. ✅ [AGENT][LOCAL] Write `docs/spec.md`, `docs/plan.md`, expand this board — scope: docs/
 7. ✅ [AGENT][LOCAL] Scaffold three-pane mail shell + local settings/whitelist stub — scope: examples/web/src/mail/
-8. 🔲 [AUTO] Sprint 0 sign-off on `main`: `validate-bootstrap --quick` · `feature-gate --stack web` · `check-github-ci --wait 300` · `check-license-compliance`
+8. ❌ [AUTO] Sprint 0 sign-off on `main`: local `feature-gate --stack web` + license OK; `git push` blocked by Cursor destructive-ops hook — `[HUMAN]` push `main` then `python scripts/agent-run.py check-github-ci --wait 300`
 9. ✅ [HUMAN] Create GitHub repo from template (agent used `gh repo create --template`)
 10. ✅ [HUMAN] FOSS distribution tier
 11. 🔲 [HUMAN] Confirm Pages source = GitHub Actions; review environment reviewers
