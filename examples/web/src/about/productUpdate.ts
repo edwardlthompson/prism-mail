@@ -1,5 +1,5 @@
 export const MS_DAY = 86_400_000;
-export const DEFAULT_ASSET_PREFIX = "Golden-Path";
+export const DEFAULT_ASSET_PREFIX = "Prism-Mail";
 
 export type ProductKind = "exe" | "apk";
 

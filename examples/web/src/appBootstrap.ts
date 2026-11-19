@@ -135,7 +135,7 @@ export function bootstrapApp(appRoot: HTMLDivElement): void {
         kind: "exe",
         prefix: assetPrefixOf(config),
         releaseRepo: config?.release_repo ?? "",
-        userAgent: `GoldenPath/${APP_VERSION}`,
+        userAgent: `PrismMail/${APP_VERSION}`,
       });
       state = { ...state, releaseRepo: config?.release_repo ?? "" };
       if (!prompt) return;

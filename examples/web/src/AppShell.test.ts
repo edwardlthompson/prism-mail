@@ -66,6 +66,15 @@ describe("createAppShell nav render", () => {
     expect(root.querySelector(".pm-pane-list")).toBeTruthy();
   });
 
+  it("Settings About nav stays off the header", () => {
+    const cb = handlers();
+    const root = document.createElement("div");
+    createAppShell(root, { ...baseState(), nav: push(homeNav(), "settings") }, cb);
+    expect(root.querySelector("[data-settings-open]")).toBeNull();
+    root.querySelector<HTMLButtonElement>("[data-settings-about]")?.click();
+    expect(cb.onPushRoute).toHaveBeenCalledWith("about");
+  });
+
   it("hides Settings in the header on inner routes", () => {
     const root = document.createElement("div");
     createAppShell(root, { ...baseState(), nav: push(homeNav(), "settings") }, handlers());

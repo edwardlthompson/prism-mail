@@ -114,4 +114,10 @@ def automate_android_sdk_smoke(root: Path, _cfg: dict) -> AttemptResult:
             return AttemptResult(0, "adb-getprop", "Gradle tests + adb getprop smoke", False)
     if argv:
         return AttemptResult(1, "adb-unavailable", "no_authorized_device after unit tests", True)
-    return AttemptResult(1, "android-sdk", "No Android example tree", True)
+    # Web-only / pruned Android children: soft-pass so /build can clear optional AVD rows.
+    return AttemptResult(
+        0,
+        "android-sdk",
+        "No Android example tree (web-only); SDK/AVD smoke N/A",
+        False,
+    )

@@ -1,26 +1,20 @@
-# Human backlog — Prism Mail Sprint 0
+# Human Backlog
 
-## Blocked on you now
+> Items automation attempted during autonomous `/build` but could not complete. BUILD_PLAN rows stay open until a human finishes them.
 
-1. **Approve / run `git push`** for `main` (2 local commits ahead of `origin/main`). Cursor blocked agent `git push` via the destructive-ops hook.
-2. After push, run:
-   ```bash
-   python scripts/agent-run.py check-github-ci --wait 300
-   ```
-   Required green: CI, Security Scan, CodeQL (plus other protected checks from setup-github-repo).
+| Deferred | Sprint | Owner | Task | Reason |
+|----------|--------|-------|------|--------|
+| 2026-11-19 | Sprint 0 — Foundation | HUMAN | Sprint 0 sign-off via check-github-ci | branch main ahead of origin; run /push then re-/build (no agent git push) |
+## Blocked on you now (push / CI)
 
-## Confirm in GitHub Settings
+1. **Commit** dirty Sprint 1–4 work, then **`/push`** for `main` (agent cannot `git push`).
+2. After push, re-run `/build` (or `attempt-build-plan-row` for Sprint 0 sign-off) so `automate_sprint0_push_ci` can flip the ❌ AUTO to ✅ when CI is green.
+3. Pages is already **GitHub Actions** (`build_type=workflow`).
 
-1. Pages source = **GitHub Actions** (not `/docs`).
-2. Environments: reviewers on `github-pages` are OK; do **not** gate CI / Security Scan / CodeQL behind environments.
-3. Actions → General: do not require approval for same-repo `github-actions[bot]` / Release Please PRs.
-4. Pick Cursor mode per `docs/CURSOR_MODES.md`.
-5. Bookmark `docs/help/BATCH_COMMANDS.md` (`/coach` for next action).
+## Automated this session (docs/decision)
 
-## Already done by agent
-
-- Repo created: https://github.com/edwardlthompson/prism-mail
-- Cloned to `C:\Users\edwar\prism-mail`
-- Init web + profile full, brand, ADRs, three-pane shell
-- Dependabot alerts, private vulnerability reporting, branch protection
-- Local `feature-gate --stack web` passed; license check passed
+- Sync hosting → ADR-0016 local-only
+- Desktop signing → `docs/DESKTOP_SIGNING.md`
+- Store disclosures → nutrition label + `docs/STORE_PRIVACY_DISCLOSURES.md`
+- Mobile device smoke → `docs/MOBILE_DEVICE_SMOKE.md` (scaffold defer)
+- Android SDK/AVD → soft-pass (no `examples/android`)

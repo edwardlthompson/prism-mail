@@ -39,7 +39,6 @@
 - **Alternatives considered:** Keep full history locally (rejected for portfolio hygiene); force-delete remotes without [HUMAN] (deferred).
 - **Consequences:** Local git tag shows 10 tags. Re-fetch restores remotes until a maintainer prunes origin.
 
-
 ### 2026-10-16 — v1.10.0 /ship
 - **Status:** Accepted
 - **Context:** M66 shape ecosystem + PREFERENCES + commercial Golden Path ready; upd applied a bogus CodeQL `vcodeql-bundle-v2.27.2` ref; About keyword gate broke upgrade sims while branding stayed `mode: template`; axe 4.14 flagged settings About nav `aria-label` vs hint text.
@@ -620,3 +619,12 @@ _Seed template ADR: `docs/adr/0000-template-baseline.md`. Child repos use `docs/
 - What: Commit outstanding M58–M61 + waiting-row automation + UnifiedPush E2E; empty CHANGELOG Unreleased; push main; merge RP #106.
 - Validated: `pre-release-gate.sh --local`, `verify-about-feature-gate.sh`, license compliance, repo hygiene, README health.
 - Deferred: Lightroom Plug-in Manager load (needs Adobe); RP merge waits on required checks after push.
+## Autonomous /build approval (2026-11-19T06:19:46+00:00)
+
+- Sync hosting: local-only (ADR-0016); no hosted sync server
+## Autonomous /build approval (2026-11-19T06:19:53+00:00)
+
+- Desktop signing: unsigned FOSS CI; notarize deferred to first public installer
+## Autonomous /build approval (2026-11-19T06:19:53+00:00)
+
+- Store privacy disclosure pack written (nutrition + STORE_PRIVACY_DISCLOSURES)

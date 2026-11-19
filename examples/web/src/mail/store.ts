@@ -35,6 +35,7 @@ export function createMailStore(storage: Storage = localStorage): MailStore {
 
   function save(bundle: MailSettingsBundle): void {
     storage.setItem(STORAGE_KEY, JSON.stringify(bundle));
+    // Encrypted vault export is opt-in via sync/vault (Sprint 2); plaintext local cache remains for UX.
   }
 
   function upsertRule(rule: WhitelistRule): MailSettingsBundle {

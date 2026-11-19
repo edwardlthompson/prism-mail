@@ -9,12 +9,19 @@
 <p align="center"><strong>{{tagline}}</strong></p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/template-{{template_version}}-0969da?style=flat-square" alt="template" />
   <img src="https://img.shields.io/badge/license-MIT-{{badge_license}}?style=flat-square" alt="MIT" />
   <img src="https://img.shields.io/badge/FOSS-no_tracking-{{badge_foss}}?style=flat-square" alt="FOSS" />
   <img src="https://img.shields.io/badge/status-active-{{badge_primary}}?style=flat-square" alt="status" />
-  <img src="https://img.shields.io/github/actions/workflow/status/{{ci_repo}}/ci.yml?style=flat-square&label=CI" alt="CI" />
+  <img src="https://img.shields.io/badge/AGENT-owner-2ea043?style=flat-square" alt="AGENT" />
+  <img src="https://img.shields.io/badge/HUMAN-owner-0969da?style=flat-square" alt="HUMAN" />
+  <img src="https://img.shields.io/badge/ADB-owner-bf8700?style=flat-square" alt="ADB" />
+  <img src="https://img.shields.io/badge/AUTO-owner-656d76?style=flat-square" alt="AUTO" />
+  <a href="https://github.com/{{ci_repo}}/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/{{ci_repo}}/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
+  [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/14564/badge)](https://www.bestpractices.dev/projects/14564)
   <img src="https://api.securityscorecards.dev/projects/github.com/{{ci_repo}}/badge" alt="OpenSSF Scorecard" />
   <a href="https://codespaces.new/{{ci_repo}}"><img src="https://img.shields.io/badge/Codespaces-Open-181717?style=flat-square&logo=github" alt="Open in GitHub Codespaces" /></a>
+  <a href="{{pages_demo_url}}"><img src="https://img.shields.io/badge/Pages-demo-0969da?style=flat-square" alt="Pages-demo" /></a>
 {{stack_badges}}
 </p>
 
@@ -27,6 +34,8 @@
 <p align="center">
   <img src="{{lockup_path}}" alt="{{name}} lockup" width="320" />
 </p>
+
+**GitHub Pages demo:** [{{pages_demo_url}}]({{pages_demo_url}})
 
 > Add screenshots or a short demo GIF under `docs/images/` and link them here when available.
 

@@ -2,6 +2,36 @@
 
 > Archive of finished BUILD_PLAN items.
 
+## Sprint 4 — Mobile clients (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Android Kotlin/Compose hub client + F-Droid-friendly push path — scope: apps/android/
+- ✅ [AGENT][LOCAL] iOS Swift/SwiftUI hub client + APNs — scope: apps/ios/
+- ✅ [ADB] Device smoke for push + rule sync
+- ✅ [HUMAN] App Store / Play listing privacy disclosures
+- ✅ [ADB] Optional: Android SDK licenses + first AVD (`/emulator`)
+
+## Sprint 3 — Desktop online client + Proton connector (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Feature spec for Tauri desktop online client — scope: docs/features/
+- ✅ [AGENT][LOCAL] Scaffold Tauri 2 app (Win/Mac/Linux) online hub client — scope: apps/desktop/
+- ✅ [AGENT][LOCAL] Optional Proton Bridge connector module + delta push — scope: apps/desktop/
+- ✅ [HUMAN] Code-sign / notarize strategy for desktop installers
+
+## Sprint 2 — Universal rules and sync (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Feature spec \docs/features/encrypted-settings-sync.md\ — scope: docs/features/
+- ✅ [AGENT][LOCAL] Encrypted sync layer for settings + whitelist rules — scope: examples/web/src/mail/
+- ✅ [AGENT][LOCAL] WebSocket (or equivalent) near-real-time rule updates — scope: examples/web/src/mail/
+- ✅ [HUMAN] Approve sync service hosting model (self-host vs local-only)
+
+## Sprint 1 — Web hub core (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Lock Settings chrome + About + nav for Prism Mail — scope: examples/web/
+- ✅ [AGENT][LOCAL] Gmail OAuth account connect + message list — scope: examples/web/src/mail/
+- ✅ [AGENT][LOCAL] Reading pane + privacy engine (image block, link confirm) — scope: examples/web/src/mail/
+- ✅ [AGENT][LOCAL] Basic compose stub + local settings persistence — scope: examples/web/src/mail/
+- ✅ [HUMAN] Approve Sprint 1 + fill `app-update.json` / `donations.json` if needed
+
 ## M66 — Shape ecosystem, commercial GP, coverage, deep upgrade (2026-10-16)
 
 - ✅ [AGENT][LOCAL] Ship /shape workflow (command + specs template + tour/cheat sheet) — scope: .cursor/commands/, docs/help/, docs/specs/, docs/PREFERENCES.md

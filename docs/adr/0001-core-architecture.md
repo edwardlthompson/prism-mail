@@ -1,35 +1,47 @@
-# ADR-0001: Multi-client topology (web hub + online desktop + mobile)
+# ADR-0001: Core Application Architecture (Child Repo)
 
 - **Status:** Accepted
 - **Date:** 2026-11-19
 - **Deciders:** Prism Mail team
 
+> Template for child repositories. Template-repo baseline ADR is `docs/adr/0000-template-baseline.md`.
+> Prism Mail decision recorded in [ADR-0017](0017-prism-multi-client-topology.md).
+
 ## Context
 
-Prism Mail must support multiple providers and surfaces without becoming a Thunderbird clone or a Proton-only product. Users live primarily in the browser; desktop and mobile must share settings and rules.
+Choose a primary architecture pattern for the application layer. Document the choice before Golden Path implementation.
 
 ## Decision
 
-**Selected pattern:** Hexagonal (ports and adapters) across clients, with these roles:
+**Selected pattern:** 🔲 MVVM  🔲 Clean Architecture  🔲 Hexagonal (Ports & Adapters)
 
-| Client | Role |
-|--------|------|
-| Web PWA | Primary hub and easiest read/write point for Gmail, IMAP/SMTP path, settings, whitelist rules, compose, search |
-| Desktop (Win/Mac/Linux, Tauri 2) | Full online client of the hub; optional Proton Bridge connector module in the same binary |
-| Android + iOS | Native clients synced with the hub; platform push |
+### MVVM
 
-Application layering per client: domain core (privacy engine, rule schema, sync clocks) has no UI framework imports; adapters talk to Gmail API, IMAP proxy, Bridge localhost, and the encrypted sync layer.
+- **View:** UI components (web components, Android Jetpack Compose, CLI output)
+- **ViewModel:** Presentation state, user actions, no platform SDK calls
+- **Model:** Domain + data services
+
+**When:** UI-heavy apps with clear screen-level state.
+
+### Clean Architecture
+
+- **Entities:** Enterprise business rules
+- **Use cases:** Application-specific rules
+- **Interface adapters:** Controllers, presenters, gateways
+- **Frameworks:** DB, web framework, device APIs
+
+**When:** Long-lived products with multiple delivery surfaces.
+
+### Hexagonal
+
+- **Ports:** Interfaces the app exposes or requires
+- **Adapters:** HTTP, DB, CLI, Android Activities wired to ports
+- **Domain core:** No inward dependencies
+
+**When:** Strong testability and swappable infrastructure matter most.
 
 ## Consequences
 
-- Sprint 0–2 focus on `examples/web/`; desktop and mobile are later sprints.
-- Proton Bridge is never required for non-Proton accounts.
-- Changing roles requires a new ADR and BUILD_PLAN `[HUMAN]` approval.
-
-## Alternatives Considered
-
-| Option | Rejected because |
-|--------|------------------|
-| Desktop-only primary client | Most users live in the browser; contradicts product brief |
-| Separate Proton-only helper app forever | Extra install surface; fold Bridge into desktop as optional module |
-| Monolith MVC | Poor fit for multi-surface FOSS clients |
+- Golden Path feature must respect layer boundaries chosen above
+- CI coverage and lint gates apply per `examples/{stack}/` conventions
+- Prism Mail: see ADR-0017 for the accepted Hexagonal multi-client topology

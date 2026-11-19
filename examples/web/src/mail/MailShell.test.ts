@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { createMailShell } from "./MailShell";
-import type { WhitelistRule } from "./schema";
+import { createDemoProvider } from "./providers/demoProvider";
 import { createMailStore } from "./store";
 
 vi.mock("../i18n", () => ({
@@ -37,25 +37,61 @@ describe("createMailShell", () => {
     expect(root.querySelector("[data-testid='mail-privacy-hint']")?.textContent).toContain(
       "mail.privacy.images_blocked",
     );
+    expect(root.querySelector("[data-testid='mail-connect']")).toBeTruthy();
   });
 
-  it("shows active rule count from the store", () => {
-    const storage = memoryStorage();
-    const store = createMailStore(storage);
-    const rule: WhitelistRule = {
-      id: "r1",
-      version: 1,
-      deviceId: "d",
-      updatedAt: "2026-01-01T00:00:00.000Z",
-      tombstone: false,
-      type: "image_allow",
-      subjectKind: "domain",
-      subject: "example.com",
-      enabled: true,
-    };
-    store.upsertRule(rule);
+  it("connects via demo provider and lists messages", async () => {
     const root = document.createElement("div");
-    createMailShell(root, { store });
-    expect(root.querySelector("[data-testid='mail-rules-count']")?.textContent).toBe("1 rules");
+    createMailShell(root, {
+      store: createMailStore(memoryStorage()),
+      provider: createDemoProvider(),
+    });
+    root.querySelector<HTMLButtonElement>("[data-mail-connect]")?.click();
+    await vi.waitFor(() => {
+      expect(root.querySelector("[data-testid='mail-list']")).toBeTruthy();
+    });
+    expect(root.querySelectorAll(".pm-msg").length).toBeGreaterThan(0);
+    expect(root.querySelector("[data-testid='mail-account']")?.textContent).toContain("demo@");
+  });
+
+  it("opens a message with remote images blocked", async () => {
+    const root = document.createElement("div");
+    createMailShell(root, {
+      store: createMailStore(memoryStorage()),
+      provider: createDemoProvider(),
+    });
+    root.querySelector<HTMLButtonElement>("[data-mail-connect]")?.click();
+    await vi.waitFor(() => {
+      expect(root.querySelector(".pm-msg")).toBeTruthy();
+    });
+    root.querySelector<HTMLButtonElement>(".pm-msg")?.click();
+    await vi.waitFor(() => {
+      expect(root.querySelector("[data-testid='mail-reading-body']")).toBeTruthy();
+    });
+    expect(root.querySelector("[data-pm-blocked]")).toBeTruthy();
+    expect(root.querySelector("[data-testid='mail-blocked-images']")?.textContent).toContain(
+      "mail.privacy.blocked_count",
+    );
+  });
+
+  it("opens compose stub and persists a draft", async () => {
+    const root = document.createElement("div");
+    createMailShell(root, {
+      store: createMailStore(memoryStorage()),
+      provider: createDemoProvider(),
+    });
+    root.querySelector<HTMLButtonElement>("[data-testid='mail-compose-open']")?.click();
+    await vi.waitFor(() => {
+      expect(root.querySelector("[data-testid='mail-compose']")).toBeTruthy();
+    });
+    const form = root.querySelector<HTMLFormElement>("[data-testid='mail-compose']");
+    expect(form).toBeTruthy();
+    form!.querySelector<HTMLInputElement>("[data-testid='mail-compose-to']")!.value = "a@b.c";
+    form!.querySelector<HTMLInputElement>("[data-testid='mail-compose-subject']")!.value = "Hi";
+    form!.querySelector<HTMLTextAreaElement>("[data-testid='mail-compose-body']")!.value = "Hello";
+    form!.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    await vi.waitFor(() => {
+      expect(root.querySelector("[data-testid='mail-draft-note']")).toBeTruthy();
+    });
   });
 });

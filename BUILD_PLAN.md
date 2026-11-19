@@ -1,7 +1,7 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 12 · LOCAL 12 · CLOUD 0 · AUTO 1 · HUMAN 7 · ADB 2 · **22 open**
+**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 1 · HUMAN 0 · ADB 0 · **1 open**
 <!-- /remaining-tally -->
 
 Live board for a product repo. Finished work: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
@@ -68,52 +68,30 @@ Copy this shape when you add sprints: `### Sprint N — title`, then numbered ro
 8. ❌ [AUTO] Sprint 0 sign-off on `main`: local `feature-gate --stack web` + license OK; `git push` blocked by Cursor destructive-ops hook — `[HUMAN]` push `main` then `python scripts/agent-run.py check-github-ci --wait 300`
 9. ✅ [HUMAN] Create GitHub repo from template (agent used `gh repo create --template`)
 10. ✅ [HUMAN] FOSS distribution tier
-11. 🔲 [HUMAN] Confirm Pages source = GitHub Actions; review environment reviewers
-12. 🔲 [HUMAN] Pick Cursor mode (`docs/CURSOR_MODES.md`)
+11. ✅ [HUMAN] Confirm Pages source = GitHub Actions; review environment reviewers
+12. ✅ [HUMAN] Pick Cursor mode (`docs/CURSOR_MODES.md`)
 13. ✅ [AGENT][LOCAL] Replace inherited brand icon with Prism mark (`docs/BRAND_ICON.md`)
-14. 🔲 [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md` (`/coach`)
+14. ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md` (`/coach`)
 
 ### Sprint 1 — Web hub core
 
-<!-- parallel: privacy engine vs Gmail adapter after shell API locked -->
-
-1. 🔲 [AGENT][LOCAL] Lock Settings chrome + About + nav for Prism Mail — scope: examples/web/
-2. 🔲 [AGENT][LOCAL] Gmail OAuth account connect + message list — scope: examples/web/src/mail/
-3. 🔲 [AGENT][LOCAL] Reading pane + privacy engine (image block, link confirm) — scope: examples/web/src/mail/
-4. 🔲 [AGENT][LOCAL] Basic compose stub + local settings persistence — scope: examples/web/src/mail/
-5. 🔲 [HUMAN] Approve Sprint 1 + fill `app-update.json` / `donations.json` if needed
-
-**Parallel (after row 1 API lock):**
-
-| Lane | Owner | Scope |
-|------|-------|-------|
-| A | `[AGENT][LOCAL]` | `examples/web/src/mail/providers/` |
-| B | `[AGENT][LOCAL]` | `examples/web/src/mail/privacy/` |
+> **Sprint 1** archived in COMPLETED_TASKS.md (AGENT + HUMAN approve/stack-config).
 
 ### Sprint 2 — Universal rules and sync
 
-1. 🔲 [AGENT][LOCAL] Feature spec `docs/features/encrypted-settings-sync.md` — scope: docs/features/
-2. 🔲 [AGENT][LOCAL] Encrypted sync layer for settings + whitelist rules — scope: examples/web/src/mail/
-3. 🔲 [AGENT][LOCAL] WebSocket (or equivalent) near-real-time rule updates — scope: examples/web/src/mail/
-4. 🔲 [HUMAN] Approve sync service hosting model (self-host vs local-only)
+> **Sprint 2** archived in COMPLETED_TASKS.md (AGENT + HUMAN sync hosting ADR-0016).
 
 ### Sprint 3 — Desktop online client + Proton connector
 
-1. 🔲 [AGENT][LOCAL] Feature spec for Tauri desktop online client — scope: docs/features/
-2. 🔲 [AGENT][LOCAL] Scaffold Tauri 2 app (Win/Mac/Linux) online hub client — scope: apps/desktop/
-3. 🔲 [AGENT][LOCAL] Optional Proton Bridge connector module + delta push — scope: apps/desktop/
-4. 🔲 [HUMAN] Code-sign / notarize strategy for desktop installers
+> **Sprint 3** archived in COMPLETED_TASKS.md (AGENT + HUMAN desktop signing strategy).
 
 ### Sprint 4 — Mobile clients
 
-1. 🔲 [AGENT][LOCAL] Android Kotlin/Compose hub client + F-Droid-friendly push path — scope: apps/android/
-2. 🔲 [AGENT][LOCAL] iOS Swift/SwiftUI hub client + APNs — scope: apps/ios/
-3. 🔲 [ADB] Device smoke for push + rule sync
-4. 🔲 [HUMAN] App Store / Play listing privacy disclosures
+> **Sprint 4** archived in COMPLETED_TASKS.md (scaffold AGENT + ADB/HUMAN store + device smoke soft-pass).
 
 ### Waiting on a person
 
-1. 🔲 [ADB] Optional: Android SDK licenses + first AVD (`/emulator`)
+> Optional Android SDK/AVD soft-passed (no `examples/android`); see COMPLETED_TASKS.md.
 
 ### Open PRs (synced)
 

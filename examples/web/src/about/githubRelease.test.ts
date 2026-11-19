@@ -13,7 +13,7 @@ describe("parseGithubRelease", () => {
     const parsed = parseGithubRelease({
       html_url: "https://example.com/r",
       assets: [
-        { name: "Golden-Path-0.18.0-x64-setup.exe", browser_download_url: "https://example.com/e" },
+        { name: "Prism-Mail-0.18.0-x64-setup.exe", browser_download_url: "https://example.com/e" },
       ],
     });
     expect(parsed?.htmlUrl).toBe("https://example.com/r");

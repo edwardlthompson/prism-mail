@@ -18,7 +18,7 @@ describe("decideLaunchPrompt", () => {
     const prompt = await decideLaunchPrompt({
       currentVersion: "0.2.0",
       releaseRepo: "acme/app",
-      userAgent: "GoldenPath/0.2.0",
+      userAgent: "PrismMail/0.2.0",
       fetchLatest,
     });
     expect(prompt).toEqual({ kind: "donate" });
@@ -30,7 +30,7 @@ describe("decideLaunchPrompt", () => {
       currentVersion: "0.2.0",
       now: 0,
       releaseRepo: "OWNER/REPO",
-      userAgent: "GoldenPath/0.2.0",
+      userAgent: "PrismMail/0.2.0",
     });
     expect(prompt).toBeNull();
     expect(localStorage.getItem("gp.update.lastSeenVersion")).toBe("0.2.0");
@@ -41,13 +41,13 @@ describe("decideLaunchPrompt", () => {
     markUpdateChecked(0);
     const fetchLatest = vi.fn().mockResolvedValue({
       htmlUrl: "https://github.com/acme/app/releases/latest",
-      assets: [{ name: "Golden-Path-0.2.0-x64-setup.exe", url: "https://example.com/setup.exe" }],
+      assets: [{ name: "Prism-Mail-0.2.0-x64-setup.exe", url: "https://example.com/setup.exe" }],
     });
     const prompt = await decideLaunchPrompt({
       currentVersion: "0.1.0",
       now: MS_DAY,
       releaseRepo: "acme/app",
-      userAgent: "GoldenPath/0.1.0",
+      userAgent: "PrismMail/0.1.0",
       fetchLatest,
     });
     expect(prompt).toEqual({
@@ -62,13 +62,13 @@ describe("decideLaunchPrompt", () => {
     markUpdateChecked(0, "0.2.0");
     const fetchLatest = vi.fn().mockResolvedValue({
       htmlUrl: "https://github.com/acme/app/releases/latest",
-      assets: [{ name: "Golden-Path-0.2.0-x64-setup.exe", url: "https://example.com/setup.exe" }],
+      assets: [{ name: "Prism-Mail-0.2.0-x64-setup.exe", url: "https://example.com/setup.exe" }],
     });
     const prompt = await decideLaunchPrompt({
       currentVersion: "0.1.0",
       now: MS_DAY,
       releaseRepo: "acme/app",
-      userAgent: "GoldenPath/0.1.0",
+      userAgent: "PrismMail/0.1.0",
       fetchLatest,
     });
     expect(prompt).toBeNull();
@@ -78,13 +78,13 @@ describe("decideLaunchPrompt", () => {
     markVersionSeen("0.1.0");
     const fetchLatest = vi.fn().mockResolvedValue({
       htmlUrl: "https://github.com/acme/app/releases/latest",
-      assets: [{ name: "Golden-Path-9.9.9-x64-setup.exe", url: "https://example.com/setup.exe" }],
+      assets: [{ name: "Prism-Mail-9.9.9-x64-setup.exe", url: "https://example.com/setup.exe" }],
     });
     const prompt = await decideLaunchPrompt({
       currentVersion: "0.2.0",
       now: MS_DAY,
       releaseRepo: "acme/app",
-      userAgent: "GoldenPath/0.2.0",
+      userAgent: "PrismMail/0.2.0",
       fetchLatest,
     });
     expect(prompt?.kind).toBe("donate");

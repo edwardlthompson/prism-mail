@@ -1,24 +1,23 @@
-# Privacy nutrition label (child stub)
+# Privacy nutrition label — Prism Mail
 
-> Copy into the child product README or store listing. Fill brackets before any store submit.
+> Copy into store listings. Do not claim collection this app does not perform.
 
-| Category | This template / Golden Path default |
-|----------|--------------------------------------|
-| Contact info | Not collected |
+| Category | Prism Mail |
+|----------|------------|
+| Contact info | Not collected by Prism (mail addresses stay with the provider you connect) |
 | Health & fitness | Not collected |
-| Financial info | Not collected (donate links open external apps/sites only) |
+| Financial info | Not collected (donate links open external sites only) |
 | Location | Not collected |
-| Sensitive info | Not collected |
-| Contacts | Not collected |
-| User content | Opt-in crash/feedback text the user reviews before GitHub |
+| Sensitive info | Not collected by Prism; email bodies are processed on-device for display |
+| Contacts | Not collected into Prism analytics; address book stays with the mail provider |
+| User content | Opt-in GitHub feedback text the user reviews before submit |
 | Browsing history | Not collected |
-| Search history | Settings search stays on-device |
+| Search history | Mail search stays on-device / provider API |
 | Identifiers | No install UUID; no advertising id |
 | Purchases | Not collected |
 | Usage data | **Off by default** — no analytics SDK |
-| Diagnostics | Crash capture **off by default**; user must enable + review |
+| Diagnostics | Crash capture **off by default** |
 | Surroundings | Not collected |
 | Body | Not collected |
-| Other data | App settings (theme) on-device only |
-
-**GitHub Pages demo:** no analytics scripts (`check-pages-analytics`). **Store:** `[HUMAN]` completes platform nutrition forms; do not claim data collection this app does not perform.
+| Other data | Settings + whitelist rules encrypted locally (ADR-0016 local-only sync) |
+**GitHub Pages demo:** no analytics (`check-pages-analytics`).

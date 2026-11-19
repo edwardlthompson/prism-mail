@@ -33,6 +33,7 @@ from human_task_leftovers import (
     automate_ollama,
     automate_scorecard_badge,
 )
+from human_task_prism import PRISM_ADB_RULES, PRISM_HUMAN_RULES
 from human_task_rows import (
     automate_approve_adr,
     automate_informational,
@@ -80,6 +81,7 @@ HUMAN_RULES: list[tuple[re.Pattern[str], str, object]] = [
     (re.compile(r"Winget submission checklist", re.I), "human", automate_winget_checklist),
     (re.compile(r"Secret scanning push protection", re.I), "human", automate_push_protection),
     (re.compile(r"Pages custom domain", re.I), "human", automate_pages_custom_domain),
+    *PRISM_HUMAN_RULES,
 ]
 
 ADB_RULES: list[tuple[re.Pattern[str], str, object]] = [
@@ -89,6 +91,7 @@ ADB_RULES: list[tuple[re.Pattern[str], str, object]] = [
     (re.compile(r"foldable|multi-window", re.I), "adb", automate_foldable_multiwindow),
     (re.compile(r"Theme change persists|process death", re.I), "adb", automate_theme_process_death),
     (re.compile(r"density|font-scale", re.I), "adb", automate_density_font_scale),
+    *PRISM_ADB_RULES,
     (re.compile(r"instrumented|connectedDebugAndroidTest|\badb\b|nav smoke|Golden Path nav", re.I), "adb", automate_adb_instrumented),
     (re.compile(r"F-Droid|device dry-run", re.I), "adb", automate_fdroid_dry_run),
     (re.compile(r"emulator|Android SDK", re.I), "adb", automate_android_sdk_smoke),

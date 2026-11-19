@@ -13,7 +13,7 @@ export function searchDuplicateIssues(
   repo: string,
   fingerprint: string,
   fetchImpl: typeof fetch = fetch,
-  userAgent = "GoldenPath/0",
+  userAgent = "PrismMail/0",
   cooldown = shared,
 ): Promise<DuplicateIssue[]> {
   const cached = cooldown.peekSearch<DuplicateIssue[]>();

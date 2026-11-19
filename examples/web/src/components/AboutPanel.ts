@@ -37,8 +37,18 @@ export function createAboutPanel(
   appGroup.className = "gp-about-group";
   const appHeading = document.createElement("h3");
   appHeading.textContent = t("about.section.app");
+  const product = document.createElement("p");
+  product.className = "gp-about-product";
+  product.dataset.testid = "about-product";
+  product.textContent = t("about.product");
+  const purpose = document.createElement("p");
+  purpose.className = "gp-about-purpose";
+  purpose.dataset.testid = "about-purpose";
+  purpose.textContent = t("about.purpose");
   appGroup.append(
     appHeading,
+    product,
+    purpose,
     metaLine(t("about.version"), state.version, true),
     metaLine(t("about.format"), "pwa", false),
   );

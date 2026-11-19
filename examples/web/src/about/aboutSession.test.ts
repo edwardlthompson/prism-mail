@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { assetPrefixOf, handleRestartGuard, loadAppUpdateConfig } from "./aboutSession";
 
 describe("assetPrefixOf", () => {
-  it("defaults to Golden-Path", () => {
-    expect(assetPrefixOf(null)).toBe("Golden-Path");
-    expect(assetPrefixOf({ release_repo: "a/b", check_interval: "daily" })).toBe("Golden-Path");
+  it("defaults to Prism-Mail", () => {
+    expect(assetPrefixOf(null)).toBe("Prism-Mail");
+    expect(assetPrefixOf({ release_repo: "a/b", check_interval: "daily" })).toBe("Prism-Mail");
     expect(
       assetPrefixOf({
         release_repo: "a/b",

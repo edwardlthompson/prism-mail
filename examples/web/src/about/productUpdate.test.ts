@@ -19,11 +19,9 @@ describe("shouldCheckDaily", () => {
 
 describe("parseAssetVersion", () => {
   it("reads product filenames, not template tags", () => {
-    expect(parseAssetVersion("Golden-Path-1.2.3-x64-setup.exe", "exe", "Golden-Path")).toBe(
-      "1.2.3",
-    );
-    expect(parseAssetVersion("golden-path-1.2.3-foss.apk", "apk", "Golden-Path")).toBe("1.2.3");
-    expect(parseAssetVersion("v0.22.1", "exe", "Golden-Path")).toBeNull();
+    expect(parseAssetVersion("Prism-Mail-1.2.3-x64-setup.exe", "exe", "Prism-Mail")).toBe("1.2.3");
+    expect(parseAssetVersion("prism-mail-1.2.3-foss.apk", "apk", "Prism-Mail")).toBe("1.2.3");
+    expect(parseAssetVersion("v0.22.1", "exe", "Prism-Mail")).toBeNull();
   });
 });
 
@@ -32,10 +30,10 @@ describe("selectProductAsset", () => {
     const picked = selectProductAsset(
       [
         { name: "sbom.cyclonedx.json", url: "https://example.com/sbom" },
-        { name: "Golden-Path-0.18.0-x64-setup.exe", url: "https://example.com/setup.exe" },
+        { name: "Prism-Mail-0.18.0-x64-setup.exe", url: "https://example.com/setup.exe" },
       ],
       "exe",
-      "Golden-Path",
+      "Prism-Mail",
     );
     expect(picked).toEqual({ version: "0.18.0", url: "https://example.com/setup.exe" });
   });
