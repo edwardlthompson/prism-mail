@@ -2,6 +2,23 @@
 
 > Archive of finished BUILD_PLAN items.
 
+## Sprint 0 — Foundation (2026-11-19)
+
+- ✅ [AGENT][LOCAL] Copy `AGENT.md.example` → `AGENT.md` with product brief — scope: AGENT.md
+- ✅ [AGENT][LOCAL] Run `scripts/init-project.ps1` web + profile full + MIT — scope: scripts/
+- ✅ [AGENT][LOCAL] Brand `product.json` mode product; sync tokens + README — scope: branding/
+- ✅ [AGENT][LOCAL] Run `scripts/setup-github-repo.ps1` — scope: scripts/
+- ✅ [AGENT][LOCAL] Write ADRs 0001 + 0011–0015, threat model, privacy, schema — scope: docs/
+- ✅ [AGENT][LOCAL] Write `docs/spec.md`, `docs/plan.md`, expand this board — scope: docs/
+- ✅ [AGENT][LOCAL] Scaffold three-pane mail shell + local settings/whitelist stub — scope: examples/web/src/mail/
+- ✅ [AUTO] Sprint 0 sign-off on `main`: local `feature-gate --stack web` + license OK; pushed + GitHub CI green
+- ✅ [HUMAN] Create GitHub repo from template (agent used `gh repo create --template`)
+- ✅ [HUMAN] FOSS distribution tier
+- ✅ [HUMAN] Confirm Pages source = GitHub Actions; review environment reviewers
+- ✅ [HUMAN] Pick Cursor mode (`docs/CURSOR_MODES.md`)
+- ✅ [AGENT][LOCAL] Replace inherited brand icon with Prism mark (`docs/BRAND_ICON.md`)
+- ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md` (`/coach`)
+
 ## Sprint 4 — Mobile clients (2026-11-19)
 
 - ✅ [AGENT][LOCAL] Android Kotlin/Compose hub client + F-Droid-friendly push path — scope: apps/android/

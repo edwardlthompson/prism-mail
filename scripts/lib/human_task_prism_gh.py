@@ -102,7 +102,7 @@ def automate_sprint0_push_ci(root: Path, _cfg: dict) -> AttemptResult:
     script = root / "scripts" / "check-github-ci.sh"
     if not script.is_file():
         return AttemptResult(1, "sprint0-push-ci", "check-github-ci.sh missing", True)
-    code, tail = run_cmd(root, ["bash", str(script), "HEAD", "--wait", "120"])
+    code, tail = run_cmd(root, ["bash", script.as_posix(), "HEAD", "--wait", "120"])
     if code != 0:
         return AttemptResult(1, "sprint0-push-ci", tail or f"CI check exit {code}", True)
     return AttemptResult(0, "sprint0-push-ci", "origin in sync and GitHub CI green", False)

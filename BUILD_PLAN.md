@@ -1,7 +1,7 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 1 · HUMAN 0 · ADB 0 · **1 open**
+**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 0 · HUMAN 0 · ADB 0 · **0 open**
 <!-- /remaining-tally -->
 
 Live board for a product repo. Finished work: [`COMPLETED_TASKS.md`](COMPLETED_TASKS.md).
@@ -56,22 +56,9 @@ Copy this shape when you add sprints: `### Sprint N — title`, then numbered ro
 
 ### Sprint 0 — Foundation
 
-<!-- parallel_exception: bootstrap sequence is ordered until init completes -->
+<!-- parallel_exception: archived in COMPLETED_TASKS.md -->
 
-1. ✅ [AGENT][LOCAL] Copy `AGENT.md.example` → `AGENT.md` with product brief — scope: AGENT.md
-2. ✅ [AGENT][LOCAL] Run `scripts/init-project.ps1` web + profile full + MIT — scope: scripts/
-3. ✅ [AGENT][LOCAL] Brand `product.json` mode product; sync tokens + README — scope: branding/
-4. ✅ [AGENT][LOCAL] Run `scripts/setup-github-repo.ps1` — scope: scripts/
-5. ✅ [AGENT][LOCAL] Write ADRs 0001 + 0011–0015, threat model, privacy, schema — scope: docs/
-6. ✅ [AGENT][LOCAL] Write `docs/spec.md`, `docs/plan.md`, expand this board — scope: docs/
-7. ✅ [AGENT][LOCAL] Scaffold three-pane mail shell + local settings/whitelist stub — scope: examples/web/src/mail/
-8. ❌ [AUTO] Sprint 0 sign-off on `main`: local `feature-gate --stack web` + license OK; `git push` blocked by Cursor destructive-ops hook — `[HUMAN]` push `main` then `python scripts/agent-run.py check-github-ci --wait 300`
-9. ✅ [HUMAN] Create GitHub repo from template (agent used `gh repo create --template`)
-10. ✅ [HUMAN] FOSS distribution tier
-11. ✅ [HUMAN] Confirm Pages source = GitHub Actions; review environment reviewers
-12. ✅ [HUMAN] Pick Cursor mode (`docs/CURSOR_MODES.md`)
-13. ✅ [AGENT][LOCAL] Replace inherited brand icon with Prism mark (`docs/BRAND_ICON.md`)
-14. ✅ [HUMAN] Bookmark `docs/help/BATCH_COMMANDS.md` (`/coach`)
+> **Sprint 0** archived in COMPLETED_TASKS.md @ `a03975c` (sign-off: push + CI green).
 
 ### Sprint 1 — Web hub core
 
