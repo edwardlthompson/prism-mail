@@ -1,5 +1,5 @@
 {
-  "template_version": "1.13.0",
+  "template_version": "1.14.0",
   "project": {
     "name": "Prism Mail",
     "purpose": "Privacy-first web-hub multi-provider email with universal synced rules, online desktop clients, and a Proton Bridge connector",
