@@ -1,7 +1,7 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 0 · LOCAL 0 · CLOUD 0 · AUTO 0 · HUMAN 0 · ADB 0 · **0 open**
+**Remaining:** AGENT 11 · LOCAL 11 · CLOUD 0 · AUTO 1 · HUMAN 1 · ADB 0 · **13 open**
 <!-- /remaining-tally -->
 
 ### Product (do not drift)
@@ -95,7 +95,7 @@ _No cloud agent items._
 > Auto-managed. Do not hand-edit rows inside the markers. Run `python3 scripts/agent-run.py sync-open-prs-build-plan -- --apply` (or `/resume` / `/dependabot`).
 
 <!-- open-prs-sync:begin -->
-_No open Dependabot or Release Please PRs._
+- 🔲 [AUTO] Merge Dependabot [#1](https://github.com/edwardlthompson/prism-mail/pull/1) (Bump the node-dependencies group in /examples/node with 3 updates)
 <!-- open-prs-sync:end -->
 
 ### Template gaps (synced)
