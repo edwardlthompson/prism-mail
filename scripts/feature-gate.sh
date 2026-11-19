@@ -5,6 +5,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
+export FEATURE_GATE_ROOT="$ROOT"
 
 # shellcheck source=lib/resolve-python.sh
 . "$(cd "$(dirname "$0")" && pwd)/lib/resolve-python.sh"
@@ -68,7 +69,9 @@ step = sys.argv[5] if len(sys.argv) > 5 else ""
 gp = json.loads(sys.argv[6]) if len(sys.argv) > 6 and sys.argv[6] else []
 skipped_raw = json.loads(sys.argv[7]) if len(sys.argv) > 7 and sys.argv[7] else []
 fixes = sys.argv[8:] if len(sys.argv) > 8 else []
-sys.path.insert(0, "scripts/lib")
+import os
+from pathlib import Path
+sys.path.insert(0, str(Path(os.environ.get("FEATURE_GATE_ROOT", Path.cwd())) / "scripts" / "lib"))
 from gate_hints import format_human
 
 def skip_entry(msg: str) -> dict:

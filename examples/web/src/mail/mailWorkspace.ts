@@ -2,6 +2,7 @@ import { t } from "../i18n";
 import { createComposeForm } from "./compose/ComposeForm";
 import { mailShellHtml } from "./mailLayout";
 import { connectAndList, type ListStatus, refreshInbox } from "./mailSession";
+import { bindMailWorkspace } from "./mailWorkspaceBind";
 import { sanitizeMailHtml } from "./privacy";
 import {
   loadAccount,
@@ -11,7 +12,6 @@ import {
 } from "./providers";
 import { bodyForMessage } from "./providers/bodies";
 import { createMailStore } from "./store";
-import { bindMailWorkspace } from "./mailWorkspaceBind";
 
 export type MailWorkspaceOptions = {
   store?: ReturnType<typeof createMailStore>;

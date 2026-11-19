@@ -572,7 +572,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: bash scripts/simulate-template-upgrade.sh
+        run: |
+          mode=$(python3 -c "import json,pathlib;p=pathlib.Path('branding/product.json');print(json.load(p.open()).get('mode') if p.is_file() else '')")
+          if [ "$mode" = "product" ]; then
+            echo "Skip upgrade simulation on product child (mode=product)"
+            exit 0
+          fi
+          bash scripts/simulate-template-upgrade.sh
 
   upgrade-simulation-windows:
     name: Template Upgrade Simulation (Windows)
@@ -591,7 +597,13 @@ jobs:
           PYTHONUTF8: "1"
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: bash scripts/simulate-template-upgrade.sh
+        run: |
+          mode=$(python -c "import json,pathlib;p=pathlib.Path('branding/product.json');print(json.load(p.open()).get('mode') if p.is_file() else '')")
+          if [ "$mode" = "product" ]; then
+            echo "Skip upgrade simulation on product child (mode=product)"
+            exit 0
+          fi
+          bash scripts/simulate-template-upgrade.sh
 
   template-update-check:
     name: Template Update Check
