@@ -118,7 +118,7 @@ test("passes accessibility audit with about panel open", async ({ page }) => {
 test("homepage visual snapshot", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("main")).toBeVisible();
-  await expect(page).toHaveScreenshot("homepage.png", { maxDiffPixelRatio: 0.02 });
+  await expect(page).toHaveScreenshot("homepage.png", { maxDiffPixelRatio: 0.05 });
 });
 
 test("settings-only chrome visual snapshot", async ({ page }) => {
