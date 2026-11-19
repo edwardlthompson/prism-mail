@@ -1,7 +1,7 @@
 # Build Plan
 
 <!-- remaining-tally -->
-**Remaining:** AGENT 11 · LOCAL 11 · CLOUD 0 · AUTO 1 · HUMAN 1 · ADB 0 · **13 open**
+**Remaining:** AGENT 11 · LOCAL 11 · CLOUD 0 · AUTO 3 · HUMAN 1 · ADB 0 · **15 open**
 <!-- /remaining-tally -->
 
 ### Product (do not drift)
@@ -95,6 +95,8 @@ _No cloud agent items._
 > Auto-managed. Do not hand-edit rows inside the markers. Run `python3 scripts/agent-run.py sync-open-prs-build-plan -- --apply` (or `/resume` / `/dependabot`).
 
 <!-- open-prs-sync:begin -->
+- 🔲 [AUTO] Merge Dependabot [#3](https://github.com/edwardlthompson/prism-mail/pull/3) (Bump org.robolectric:robolectric from 4.17 to 4.18 in /examples/android in the android-dependencies group)
+- 🔲 [AUTO] Merge Dependabot [#2](https://github.com/edwardlthompson/prism-mail/pull/2) (Bump the web-dependencies group in /examples/web with 5 updates)
 - 🔲 [AUTO] Merge Dependabot [#1](https://github.com/edwardlthompson/prism-mail/pull/1) (Bump the node-dependencies group in /examples/node with 3 updates)
 <!-- open-prs-sync:end -->
 
