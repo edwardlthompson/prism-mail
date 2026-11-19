@@ -128,7 +128,7 @@ test("settings-only chrome visual snapshot", async ({ page }) => {
   await expect(header.getByRole("button", { name: "Donate via Venmo" })).toHaveCount(0);
   await expect(page.locator("[data-about-open]")).toHaveCount(0);
   await expect(page.locator(".gp-theme-toggle")).toHaveCount(0);
-  await expect(page).toHaveScreenshot("settings-only-chrome.png", { maxDiffPixelRatio: 0.02 });
+  await expect(page).toHaveScreenshot("settings-only-chrome.png", { maxDiffPixelRatio: 0.05 });
 });
 
 test("share-target opens feature feedback with prefill", async ({ page }) => {

@@ -75,17 +75,25 @@ Copy this shape when you add sprints: `### Sprint N — title`, then numbered ro
 
 ### Sprint 1 — Web hub core
 
+<!-- parallel_exception: AGENT rows archived in COMPLETED_TASKS.md -->
+
 > **Sprint 1** archived in COMPLETED_TASKS.md (AGENT + HUMAN approve/stack-config).
 
 ### Sprint 2 — Universal rules and sync
+
+<!-- parallel_exception: AGENT rows archived in COMPLETED_TASKS.md -->
 
 > **Sprint 2** archived in COMPLETED_TASKS.md (AGENT + HUMAN sync hosting ADR-0016).
 
 ### Sprint 3 — Desktop online client + Proton connector
 
+<!-- parallel_exception: AGENT rows archived in COMPLETED_TASKS.md -->
+
 > **Sprint 3** archived in COMPLETED_TASKS.md (AGENT + HUMAN desktop signing strategy).
 
 ### Sprint 4 — Mobile clients
+
+<!-- parallel_exception: AGENT rows archived in COMPLETED_TASKS.md -->
 
 > **Sprint 4** archived in COMPLETED_TASKS.md (scaffold AGENT + ADB/HUMAN store + device smoke soft-pass).
 
