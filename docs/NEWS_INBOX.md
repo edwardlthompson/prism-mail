@@ -85,3 +85,13 @@ Catch-up for Nov 17–18 (the daily brief did not run those mornings).
 - [x] Confirm agent-framework 1.26.1/1.26.2 is absent and add a denylist plus .pth hook check — The template should keep descendants off the compromised releases and teach them to reject unexpected Python startup hooks. Label: `[AGENT][LOCAL]` · Priority: P2 · https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi (synced to BUILD_PLAN)
 - [x] Upgrade template MCP git/filesystem/everything servers to the v2.5.0 patches — v2.4.0 left eight more git/filesystem/SSRF bugs; date-versioned filesystem installs will not move to 2.4.0 on their own. Label: `[AGENT][LOCAL]` · Priority: P2 · https://github.com/modelcontextprotocol/servers/releases/tag/v2.5.0 (synced to BUILD_PLAN)
 - [x] Upgrade MCP Inspector to 2.16.0 or 1.0.6 if the template documents it — A malicious MCP server could previously crash the Inspector proxy with an unbounded SSE stream. Label: `[AGENT][LOCAL]` · Priority: P2 · https://github.com/modelcontextprotocol/inspector/releases/tag/2.16.0 (synced to BUILD_PLAN)
+
+## 2026-11-20
+
+**News and updates**
+
+- ETSI published EN 301 549 4th edition (Nov 17), the European Accessibility Act's harmonised ICT accessibility standard: web, document and software requirements move to current guidance (reported as WCAG 2.2), cognitive-accessibility requirements get stronger, and conformance/testing methodology is added. ETSI also published EN 303 919 for accessible emergency communications. [ETSI](https://www.etsi.org/newsroom/press-releases/etsi-advances-digital-accessibility-across-europe-with-two-standards/) · [WCAG 2.2 detail](https://ifdb.io/en/en-301-549-v4-1-1-wcag-2-2-becomes-the-benchmark-what-businesses-need-to-know-now/)
+
+**Tasks for the planning agent**
+
+- [ ] Target WCAG 2.2 AA / EN 301 549 v4 in this repo's UX review checklist (target size minimum, focus not obscured, dragging alternatives, accessible authentication, redundant entry), or pull the APB checklist update once it lands — the repo is still early, so building to the current standard now is cheaper than retrofitting. Label: `[AGENT][LOCAL]` · Priority: P3 · https://www.etsi.org/newsroom/press-releases/etsi-advances-digital-accessibility-across-europe-with-two-standards/
