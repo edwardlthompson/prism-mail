@@ -99,3 +99,9 @@ See [`SECURITY.md`](SECURITY.md). Enable Dependabot alerts and follow [`docs/SEC
 ## Acknowledgments
 
 Scaffolded with [agent-project-bootstrap](https://github.com/edwardlthompson/agent-project-bootstrap). Brand assets: [`branding/BRANDING.md`](branding/BRANDING.md). Design system: [`docs/DESIGN_GUIDE.md`](docs/DESIGN_GUIDE.md).
+
+## What this is not
+
+- Not a hosted email provider or SMTP/IMAP server.
+- Not a telemetry-collecting or ad-supported mail client.
+- Not a finished commercial product promise — see active milestones in `BUILD_PLAN.md`.
