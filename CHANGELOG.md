@@ -8,6 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.14.0](https://github.com/edwardlthompson/prism-mail/compare/v1.13.0...v1.14.0) (2026-11-22)
+
+
+### Added
+
+* bootstrap Prism Mail Sprint 0 web hub foundation ([e540ea8](https://github.com/edwardlthompson/prism-mail/commit/e540ea8aa6d72dadb59af15aaa598478edd8825d))
+
+
+### Fixed
+
+* **ci:** CodeQL javascript-only for web-pruned Prism Mail ([9f029d4](https://github.com/edwardlthompson/prism-mail/commit/9f029d490299d29db8646084d4ec92554d8f3b7a))
+* **ci:** format web mailWorkspace, skip product upgrade sim, gate_hints path ([3961c7f](https://github.com/edwardlthompson/prism-mail/commit/3961c7fbf5f0af551424ee62c58a662364e46921))
+* **ci:** gate Node job on stack-presence ([95b95e4](https://github.com/edwardlthompson/prism-mail/commit/95b95e44c634bd0319baa80507b08a1e97b5cfa7))
+* **ci:** use stack-presence for Android job if (not job-level hashFiles) ([77d619e](https://github.com/edwardlthompson/prism-mail/commit/77d619e399b1f199428b060562c993de31e00900))
+* **ci:** web-only CI guards, feature-gate stack, snapshot tolerance ([ad558ea](https://github.com/edwardlthompson/prism-mail/commit/ad558ea722204585126634953bf368e095ce0e0c))
+* **web:** raise homepage screenshot maxDiffPixelRatio to 0.05 ([a03975c](https://github.com/edwardlthompson/prism-mail/commit/a03975cbf2196dc845ffa21c7002c6228208337a))
+
 ## [1.13.0](https://github.com/edwardlthompson/agent-project-bootstrap/compare/v1.12.1...v1.13.0) (2026-11-09)
 
 
