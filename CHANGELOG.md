@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
 ## [1.14.0](https://github.com/edwardlthompson/prism-mail/compare/v1.13.0...v1.14.0) (2026-11-22)
 
 
@@ -22,8 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **ci:** use stack-presence for Android job if (not job-level hashFiles) ([77d619e](https://github.com/edwardlthompson/prism-mail/commit/77d619e399b1f199428b060562c993de31e00900))
 * **ci:** web-only CI guards, feature-gate stack, snapshot tolerance ([ad558ea](https://github.com/edwardlthompson/prism-mail/commit/ad558ea722204585126634953bf368e095ce0e0c))
 * **web:** raise homepage screenshot maxDiffPixelRatio to 0.05 ([a03975c](https://github.com/edwardlthompson/prism-mail/commit/a03975cbf2196dc845ffa21c7002c6228208337a))
-
-## [Unreleased]
 
 ## [1.13.0](https://github.com/edwardlthompson/agent-project-bootstrap/compare/v1.12.1...v1.13.0) (2026-11-09)
 
