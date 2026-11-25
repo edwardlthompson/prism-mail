@@ -95,3 +95,9 @@ Catch-up for Nov 17–18 (the daily brief did not run those mornings).
 **Tasks for the planning agent**
 
 - [ ] Target WCAG 2.2 AA / EN 301 549 v4 in this repo's UX review checklist (target size minimum, focus not obscured, dragging alternatives, accessible authentication, redundant entry), or pull the APB checklist update once it lands — the repo is still early, so building to the current standard now is cheaper than retrofitting. Label: `[AGENT][LOCAL]` · Priority: P3 · https://www.etsi.org/newsroom/press-releases/etsi-advances-digital-accessibility-across-europe-with-two-standards/
+
+## 2026-11-25
+
+**News and updates**
+
+- Better Stack compared the same desktop chat app built in GPUI (the Rust, GPU-drawn UI framework Discord is moving its desktop app to), Tauri, and Electron, looking at memory, app size, frame rate and CPU. Useful background if this repo is choosing or revisiting a desktop shell; I did not run their comparison. [GPUI](https://gpui.rs) · [Better Stack](https://www.youtube.com/shorts/PbNB0MHO0eA)
