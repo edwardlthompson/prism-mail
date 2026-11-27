@@ -122,3 +122,13 @@ Catch-up for Nov 17–18 (the daily brief did not run those mornings).
 - [ ] Add an explicit From/identity picker to compose (optional "always ask" mode) — A unified inbox across Gmail, IMAP and Proton makes sending from the wrong address easy. Label: `[AGENT][LOCAL]` · Priority: P3 · https://blog.thunderbird.net/2026/11/desktop-add-ons-spotlight-identity-chooser-helps-you-send-from-the-right-address/
 - [ ] Benchmark cold start and RAM of the Tauri desktop shell before wiring it to the web hub — Conductor's numbers show the WebView choice can dominate perceived speed, and a baseline keeps the ADR-0015 desktop decision evidence-based. Label: `[AGENT][LOCAL]` · Priority: P3 · https://www.conductor.build/changelog/0.95.0-agents-that-manage-your-local-workspaces
 - [ ] Try server.fs.strict: 'extended' in the Vite 8.4 dev config once Dependabot lands 8.4 — The hub handles OAuth tokens and mail, so stricter dev-server file checks are cheap extra protection. Label: `[AGENT][LOCAL]` · Priority: P3 · https://github.com/vitejs/vite/releases/tag/v8.4.0
+
+## 2026-11-27
+
+**News and updates**
+
+- Catch-up (Nov 24): Thunderbird 161's [MFSA 2026-134](https://www.mozilla.org/en-US/security/advisories/mfsa2026-134/) includes CVE-2026-136227 (a bare CR in a header plus unvalidated IMAP URL message IDs led to IMAP command injection and remote content loading) and CVE-2026-136226 (a duplicate lowercase `From` header spoofed the OpenPGP-signed sender). Both are bug classes prism-mail's generic IMAP connector and header display can be tested against.
+
+**Tasks for the planning agent**
+
+- [ ] Add connector tests for bare-CR header injection and unvalidated IMAP message IDs, and make header display reject or flag duplicate From headers — Thunderbird 161 just fixed IMAP command injection and signed-sender spoofing from exactly these inputs. Label: `[AGENT][LOCAL]` · Priority: P3 · https://www.mozilla.org/en-US/security/advisories/mfsa2026-134/
